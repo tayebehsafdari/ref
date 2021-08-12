@@ -1,21 +1,11 @@
-import React, {forwardRef, useImperativeHandle, useRef} from "react";
+import React, {useRef} from "react";
 
-function UseRefComponent(props, ref) {
+function UseRefComponent() {
     const inputEl = useRef(null);
 
-    useImperativeHandle(ref, () => {
-        console.log("useImperativeHandle");
-        return {
-            focus: () => {
-                inputEl.current.focus();
-            }
-        };
-    });
-
     const onButtonClick = () => {
-        console.log("onButtonClick");
         inputEl.current.focus();
-    }
+    };
 
     return (
         <>
@@ -25,7 +15,5 @@ function UseRefComponent(props, ref) {
         </>
     );
 }
-
-UseRefComponent = forwardRef(UseRefComponent);
 
 export default UseRefComponent;
