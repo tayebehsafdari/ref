@@ -1,15 +1,24 @@
 import './App.scss';
 
-import {Container, Form} from 'react-bootstrap';
-import Counter from "./Counter";
+import {Container} from 'react-bootstrap';
+import CreateRefComponent from "./CreateRefComponent";
+import ForwardRefComponent from "./ForwardRefComponent";
+import ForwardRefComponentHOC from "./ForwardRefComponentHOC";
+import UseRefComponent from "./UseRefComponent";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App my-5">
             <Container>
-                <Form>
-                    <Counter initialCount={0}/>
-                </Form>
+                <CreateRefComponent/>
+                <br/>
+                <ForwardRefComponent/>
+                <br/>
+                <br/>
+                <ForwardRefComponentHOC/>
+                <br/>
+                <br/>
+                <UseRefComponent/>
             </Container>
         </div>
     );
